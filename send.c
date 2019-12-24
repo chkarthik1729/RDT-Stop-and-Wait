@@ -1,4 +1,4 @@
-#include "custom.h"
+#include "rdt.h"
 
 int main(void){
 
@@ -9,7 +9,7 @@ int main(void){
 		die("Error: Destination unreachable or heavy traffic in network");
 	
 
-	printf("%d bytes sent successfully\n", msgLen);
+	printf("message sent successfully\n");
 	return 0;
 }
 
@@ -64,7 +64,6 @@ int rdt_send(char *message, int msgLen, char *dest, int port){
 		seqNum = (seqNum + 1) % (32767);
 	}
 
-	// Null character not being sent automatically for 830 bytes.
 	
 	// send Null character if it hasn't been sent yet.
 	if(msgLen % MAXMSG == 0){

@@ -1,4 +1,4 @@
-#include "custom.h"
+#include "rdt.h"
 
 int main(void){
 
@@ -8,7 +8,7 @@ int main(void){
 	if(rdt_recv(message, msgLen) < 0)
 		die("Error");
 
-	printf("\n%s : %lu bytes\n", message, strlen(message));
+	printf("\n%s\n", message);
 	return 0;
 }
 
